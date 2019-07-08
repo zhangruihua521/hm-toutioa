@@ -10,11 +10,14 @@ import './assets/css/index.css'
 import  VueRouter from 'vue-router'
 //需要用use配置一下
 Vue.use(VueRouter)
+//导入herolist组件
+import HeroList from './views/hero/HeroList.vue'
 //创建路由对象
 const router = new VueRouter({
   //配置路由规则
-  roures:[
-    // {name:'hero',path:'/hero',component:hero}
+  routes:[
+    {name:'hero',path:'/hero',component:HeroList},
+  
   ]
 })
 new Vue({
