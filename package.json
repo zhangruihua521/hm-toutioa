@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "start":"vue run serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
