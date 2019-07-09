@@ -18,9 +18,9 @@
                 <td>{{item.name}}</td>
                 <td>{{item.gender}}</td>
                 <td>
-                  <a href="edit.html">edit</a>
+                  <a href="edit.html">编辑</a>
                   &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
+                  <a href="javascript:" @click="del(item.id)">删除</a>
                 </td>
               </tr>
             
@@ -65,8 +65,29 @@ export default {
         .catch((err)=>{
           alert('服务器异常'+err)
         })
+    },
+   del(id){
+    //确认弹出框,发送axios请求,然后重新加载页面
+    if(!confirm('你确定要删除吗?')){
+        return false
     }
+    //发送请求
+    axios 
+       .delete(`http://localhost:3000/heroes/${id}`)
+       .then((res)=>{
+         if(res.status == 200){
+           //删除成功重新加载数据
+           this.loadDate()
+         }else{
+           alert('删除失败')
+         }
+       })
+       .catch((err)=>{
+          alert('服务器异常'+err)
+       })
+   }
   },
+
 }
 </script>
 
