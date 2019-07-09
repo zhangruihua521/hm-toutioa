@@ -11,7 +11,8 @@ import HeroAdd from  './views/hero/HeroAdd.vue'
 //创建路由对象
 const router = new VueRouter({
   //当浏览器地址栏中的路由地址,#hero和router-link生成的a标签的herf精确区配的时候,添加类样式
-  linkExactActiveClass:"active",
+  // linkExactActiveClass:"active",
+  linkActiveClass:'active',
   //配置路由规则
   routes:[
     {path:'/',redirect:{name:'hero'}},
