@@ -8,6 +8,7 @@ import HeroList from './views/hero/HeroList.vue'
 import WeaponList from './views/weapon/WeaponList.vue'
 import EquipList from './views/equip/EquipList.vue'
 import HeroAdd from  './views/hero/HeroAdd.vue'
+import HeroEdit from './views/hero/HeroEdit.vue'
 //创建路由对象
 const router = new VueRouter({
   //当浏览器地址栏中的路由地址,#hero和router-link生成的a标签的herf精确区配的时候,添加类样式
@@ -20,7 +21,9 @@ const router = new VueRouter({
     {name:'weapon',path:'/weapon',component:WeaponList},
     {name:'equip',path:'/equip',component:EquipList},
     //添加路由模块
-    {name:'heroadd',path:'/hero/add',component:HeroAdd}
+    {name:'heroadd',path:'/hero/add',component:HeroAdd},
+    //编辑路由
+    {name:'heroedit',path:'/hero/edit',component:HeroEdit}
   ]
 })
 //导出router对象
