@@ -17,13 +17,13 @@
       <!-- button 就是提交按钮 -->
       <!-- <input type="button" value=""> -->
       <!-- prevent 事件修饰符，阻止默认行为 -->
-      <button class="btn btn-success">提交</button>
+      <button class="btn btn-success" @click.prevent="update">提交</button>
     </form>
   </div>
 </template>
 
-<script>
-import axios from 'axios'
+// <script>
+// import axios from 'axios'
 //组件中动态获取路由中的id ->$route.params.id  这种方法不好
 //路由设置规则,props:true,路由自动把id数据传递给组件,组件中接收props:['id']
 export default {
@@ -45,7 +45,7 @@ export default {
     },
     methods: {
       editDate(){
-        axios.get(`http://localhost:3000/heroes/${this.id}`)
+        this.axios.get(`http://localhost:3000/heroes/${this.id}`)
           .then((res)=>{
             const{data,status}=res
             if(status == 200){
@@ -58,8 +58,23 @@ export default {
           .catch((err)=>{
             alert('服务器错误'+err)
           })
-      }
+      },
+      update(){
+       this.axios.put(`http://localhost:3000/heroes/${this.id}`,this.formDate)
+        .then((res)=>{
+          if(res.status ==200){
+            //修改成功,跳转到/hero页面
+            this.$router.push('/hero')
+          }else{
+            alert('修改数据失败')
+          }
+        })
+        .catch((err)=>{
+          alert('服务器异常'+err)
+        })
+    }
     },
+   
    
 }
 </script>
