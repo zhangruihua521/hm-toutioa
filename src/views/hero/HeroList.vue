@@ -52,7 +52,7 @@ export default {
     loadDate(){
       //发送axios
       this.axios
-        .get('http://localhost:3000/heroes')
+        .get('heroes')
         .then((response )=>{
           // console.log(response)
           const {data,status}=response
@@ -75,7 +75,7 @@ export default {
     }
     //发送请求
     this.axios 
-       .delete(`http://localhost:3000/heroes/${id}`)
+       .delete(`heroes/${id}`)
        .then((res)=>{
          if(res.status == 200){
            //删除成功重新加载数据

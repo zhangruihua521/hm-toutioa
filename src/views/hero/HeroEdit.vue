@@ -45,7 +45,7 @@ export default {
     },
     methods: {
       editDate(){
-        this.axios.get(`http://localhost:3000/heroes/${this.id}`)
+        this.axios.get(`heroes/${this.id}`)
           .then((res)=>{
             const{data,status}=res
             if(status == 200){
@@ -60,7 +60,7 @@ export default {
           })
       },
       update(){
-       this.axios.put(`http://localhost:3000/heroes/${this.id}`,this.formDate)
+       this.axios.put(`heroes/${this.id}`,this.formDate)
         .then((res)=>{
           if(res.status ==200){
             //修改成功,跳转到/hero页面
