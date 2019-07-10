@@ -23,11 +23,14 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
+//组件中动态获取路由中的id ->$route.params.id  这种方法不好
+//路由设置规则,props:true,路由自动把id数据传递给组件,组件中接收props:['id']
 export default {
     //绑定文本框
     //发送请求
     //跳转到/hero
+    props:['id'],
     data() {
         return {
             formDate:{
@@ -36,6 +39,26 @@ export default {
                 
             }
         }
+    },
+    mounted() {
+      this.editDate()
+    },
+    methods: {
+      editDate(){
+        axios.get(`http://localhost:3000/heroes/${this.id}`)
+          .then((res)=>{
+            const{data,status}=res
+            if(status == 200){
+              //获取成功
+              this.formDate = data
+            }else{
+              alert('获取数据失败')
+            }
+          })
+          .catch((err)=>{
+            alert('服务器错误'+err)
+          })
+      }
     },
    
 }

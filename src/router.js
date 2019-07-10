@@ -22,8 +22,8 @@ const router = new VueRouter({
     {name:'equip',path:'/equip',component:EquipList},
     //添加路由模块
     {name:'heroadd',path:'/hero/add',component:HeroAdd},
-    //编辑路由
-    {name:'heroedit',path:'/hero/edit',component:HeroEdit}
+    //动态编辑路由
+    {name:'heroedit',path:'/hero/edit/:id',component:HeroEdit,props:true}
   ]
 })
 //导出router对象

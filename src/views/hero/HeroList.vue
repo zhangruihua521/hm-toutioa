@@ -58,7 +58,7 @@ export default {
           const {data,status}=response
           if(status == 200){
             this.list=data
-            console.log(this.list)
+            // console.log(this.list)
           }else{
             //获取数据失败
             alert('获取数据失败')
