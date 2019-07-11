@@ -19,7 +19,8 @@
                 <td>{{item.name}}</td>
                 <td>{{item.gender}}</td>
                 <td>
-                  <a href="edit.html">编辑</a>
+                  <!-- <a href="edit.html">编辑</a> -->
+                  <router-link :to="{name:'heroedit',params:{id:item.id}}">编辑</router-link>
                   &nbsp;&nbsp;
                   <a href="javascript:" @click="del(item.id)">删除</a>
                 </td>
@@ -57,7 +58,7 @@ export default {
           const {data,status}=response
           if(status == 200){
             this.list=data
-            console.log(this.list)
+            // console.log(this.list)
           }else{
             //获取数据失败
             alert('获取数据失败')
