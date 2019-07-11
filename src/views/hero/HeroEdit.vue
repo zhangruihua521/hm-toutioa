@@ -40,7 +40,7 @@ export default {
     methods: {
         getByid(){
             this.axios
-            .get(`http://localhost:3000/heroes/${this.id}`)
+            .get(`heroes/${this.id}`)
             .then((res)=>{
                 const {status,data}=res
                 if(status ===200){
@@ -55,7 +55,7 @@ export default {
         },
         update(){
             this.axios
-            .put(`http://localhost:3000/heroes/${this.id}`,this.formDate)
+            .put(`heroes/${this.id}`,this.formDate)
             .then((res)=>{
                 if(res.status ===200){
                     this.$router.push('/hero')

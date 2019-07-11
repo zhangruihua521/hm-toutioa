@@ -39,7 +39,7 @@ export default {
     methods: {
         add(){
             this.axios
-              .post('http://localhost:3000/heroes',this.formDate)
+              .post('heroes',this.formDate)
               .then((res)=>{
                   if(res.status ==201){
                       //添加成功跳回到hero页面

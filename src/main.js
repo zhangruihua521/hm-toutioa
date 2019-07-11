@@ -7,6 +7,7 @@ Vue.config.productionTip = false
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './assets/css/index.css'
 import axios from 'axios'
+axios.defaults.baseURL='http://localhost:3000/'
 Vue.prototype.axios =axios
 
 //导入router模块
