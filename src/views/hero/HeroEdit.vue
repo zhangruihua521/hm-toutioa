@@ -22,8 +22,8 @@
   </div>
 </template>
 
-<script>
-import axios from 'axios'
+// <script>
+// import axios from 'axios'
 export default {
     props:['id'],
     data() {
@@ -39,7 +39,7 @@ export default {
     },
     methods: {
         getByid(){
-            axios
+            this.axios
             .get(`http://localhost:3000/heroes/${this.id}`)
             .then((res)=>{
                 const {status,data}=res
@@ -54,7 +54,7 @@ export default {
             })
         },
         update(){
-            axios
+            this.axios
             .put(`http://localhost:3000/heroes/${this.id}`,this.formDate)
             .then((res)=>{
                 if(res.status ===200){

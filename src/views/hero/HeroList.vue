@@ -34,7 +34,7 @@
 
 <script>
 //导入axios
-import axios from 'axios'
+// import axios from 'axios'
 
 //英雄列表数据渲染,发送axios请求,把数据显示到页面上
 export default {
@@ -51,7 +51,7 @@ export default {
   methods: {
     loadDate(){
       //发送axios
-      axios
+      this.axios
         .get('http://localhost:3000/heroes')
         .then((response )=>{
           // console.log(response)
@@ -74,7 +74,7 @@ export default {
         return false
     }
     //发送请求
-    axios 
+    this.axios 
        .delete(`http://localhost:3000/heroes/${id}`)
        .then((res)=>{
          if(res.status == 200){

@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
     //绑定文本框
     //发送请求
@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         add(){
-            axios
+            this.axios
               .post('http://localhost:3000/heroes',this.formDate)
               .then((res)=>{
                   if(res.status ==201){
